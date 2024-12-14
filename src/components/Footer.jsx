@@ -1,7 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer>
+      <div className="text-center py-10">
+        <Link to="/" class="text-2xl font-semibold">
+          Book <span className="text-sky-500">Review</span>
+        </Link>
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()}{" "}
+          <Link to="/" class="hover:underline">
+            BookReview
+          </Link>
+          . All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
