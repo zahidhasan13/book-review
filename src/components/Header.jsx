@@ -11,36 +11,36 @@ const Header = () => {
   };
   return (
     <header className="fixed top-0 left-0 right-0">
-      <nav class="bg-white/90 backdrop-blur-sm px-4 lg:px-6 py-2.5">
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to="/" class="text-2xl font-semibold">
+      <nav className="bg-white/90 backdrop-blur-sm px-4 lg:px-6 py-2.5">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+          <Link to="/" className="text-2xl font-semibold">
             Book <span className="text-sky-500">Review</span>
           </Link>
-          <div class="flex items-center lg:order-2">
+          <div className="flex items-center lg:order-2">
             <div className="flex items-center gap-3">
-              <button class="btn-primary">Log in</button>
-              <button class="btn-primary">Sign up</button>
+              <button className="btn-primary">Log in</button>
+              <button className="btn-primary">Sign up</button>
             </div>
 
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
-              class="inline-flex items-center p-2 ml-1 text-2xl rounded-lg lg:hidden"
+              className="inline-flex items-center p-2 ml-1 text-2xl rounded-lg lg:hidden"
               aria-controls="mobile-menu-2"
               aria-expanded="false"
               onClick={menuToggler}
             >
-              <span class="sr-only">Open main menu</span>
+              <span className="sr-only">Open main menu</span>
               <span>
                 <FaBars />
               </span>
             </button>
           </div>
           <div
-            class={`justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+            className={`justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
             id="mobile-menu-2 ${openMenu ? "block" : "hidden"}`}
           >
-            <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <NavLink
                   to="/"
@@ -53,12 +53,12 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to="/book-list"
+                  to="/listed-book"
                   className={({ isActive }) =>
                     isActive ? "activeLink" : "deactiveLink"
                   }
                 >
-                  Book List
+                  Listed Book
                 </NavLink>
               </li>
               <li>
