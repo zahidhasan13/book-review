@@ -10,8 +10,8 @@ const Header = () => {
     setOpenMenu(!openMenu);
   };
   return (
-    <header>
-      <nav class="bg-white px-4 lg:px-6 py-2.5">
+    <header className="fixed top-0 left-0 right-0">
+      <nav class="bg-white/90 backdrop-blur-sm px-4 lg:px-6 py-2.5">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link to="/" class="text-2xl font-semibold">
             Book <span className="text-sky-500">Review</span>
