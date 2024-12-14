@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(16, 165, 233);
+  border-radius: 20px;
+  height: 10%;
+}
+
 .activeLink {
   @apply text-lg font-semibold text-sky-500 border-b-2 border-sky-500;
 }
@@ -14,4 +27,11 @@
 }
 .btn-secondary {
   @apply bg-sky-500  px-3 py-1 lg:px-4 lg:py-2 text-white text-lg font-semibold rounded-md hover:bg-sky-700 duration-300;
+}
+
+.activeTab {
+  @apply text-xl font-semibold border-t-2 border-sky-500 pb-2;
+}
+.deactiveTab {
+  @apply text-xl font-semibold border-t-2 border-transparent pb-2;
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const BookCard = ({ book }) => {
   return (
     <Link to={`/book-details/${book.bookId}`}>
-      <div className="card p-10 bg-gradient-to-t from-white to-gray-300 rounded-md h-[700px]">
+      <div className="card p-10 bg-gradient-to-t from-white to-sky-300 rounded-md h-[700px]">
         <div className="flex justify-center">
           <img src={book.image} alt={book.bookName} className="w-52 h-72" />
         </div>
