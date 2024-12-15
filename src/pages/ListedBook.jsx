@@ -32,7 +32,7 @@ const ListedBook = () => {
             className="text-white bg-sky-500 hover:bg-sky-700  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
             type="button"
           >
-            Dropdown button{" "}
+            Sort{" "}
             <svg
               className="w-2.5 h-2.5 ms-3"
               aria-hidden="true"
