@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ListedItem from "../components/ListedItem";
+import { BookContext } from "../context/BookProvider";
 
 const ListedBook = () => {
   const [activeTab, setActiveTab] = useState("read-book");
-  const wishList = JSON.parse(localStorage.getItem("wishList"));
-  const readBook = JSON.parse(localStorage.getItem("read-book"));
+  const [openDropDown, setOpenDropDown] = useState(false);
+  const { readBook, wishList, sortByRating, sortByPages, sortByPublishedYear } =
+    useContext(BookContext);
   return (
     <div className="min-h-screen container mx-auto py-20">
-      <div className="flex items-center justify-between border-b-2 border-sky-500 px-2">
+      <div className="flex items-center justify-between border-b-2 border-sky-500 px-2 relative">
         <div className="flex items-center gap-5">
           <button
             onClick={() => setActiveTab("read-book")}
@@ -22,21 +24,96 @@ const ListedBook = () => {
             WishList
           </button>
         </div>
-        <div>sort by</div>
+        <div className="absolute right-1 top-0">
+          <button
+            onClick={() => setOpenDropDown(!openDropDown)}
+            id="dropdownDefaultButton"
+            data-dropdown-toggle="dropdown"
+            className="text-white bg-sky-500 hover:bg-sky-700  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+            type="button"
+          >
+            Dropdown button{" "}
+            <svg
+              className="w-2.5 h-2.5 ms-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+
+          {/* <!-- Dropdown menu --> */}
+          <div
+            id="dropdown"
+            className={`z-10 bg-sky-500 shadow w-44 ${
+              openDropDown ? "block" : "hidden"
+            }`}
+          >
+            <ul
+              className="py-2 text-sm text-white"
+              aria-labelledby="dropdownDefaultButton"
+            >
+              <li>
+                <button
+                  onClick={sortByRating}
+                  class="block w-full px-4 py-2 hover:bg-sky-700"
+                >
+                  Rating
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={sortByPages}
+                  class="block w-full px-4 py-2 hover:bg-sky-700"
+                >
+                  Number of Pages
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={sortByPublishedYear}
+                  class="block w-full px-4 py-2 hover:bg-sky-700"
+                >
+                  Published Year
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div className="mt-5">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {activeTab === "read-book" &&
-            readBook?.map((book) => (
-              <ListedItem key={book.bookId} book={book} />
-            ))}
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {activeTab === "wishList" &&
-            wishList?.map((book) => (
-              <ListedItem key={book.bookId} book={book} />
-            ))}
-        </div>
+        {readBook.length === 0 && activeTab === "read-book" ? (
+          <p className="text-center text-2xl font-bold text-sky-500">
+            Read Book List is Empty!
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {activeTab === "read-book" &&
+              readBook?.map((book) => (
+                <ListedItem key={book.bookId} book={book} type="read-book" />
+              ))}
+          </div>
+        )}
+        {wishList.length === 0 && activeTab === "wishList" ? (
+          <p className="text-center text-2xl font-bold text-sky-500">
+            Wishlist is Empty!
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {activeTab === "wishList" &&
+              wishList?.map((book) => (
+                <ListedItem key={book.bookId} book={book} type="wishList" />
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );

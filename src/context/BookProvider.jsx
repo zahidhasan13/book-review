@@ -24,6 +24,37 @@ const BookProvider = ({ children }) => {
     getAllData();
   }, []);
 
+  const sortByRating = () => {
+    const sortBook = [...readBook].sort((a, b) => b.rating - a.rating);
+    const sortWishlist = [...wishList].sort((a, b) => b.rating - a.rating);
+    setReadBook(sortBook);
+    setWishList(sortWishlist);
+    localStorage.setItem("read-book", JSON.stringify(sortBook));
+    localStorage.setItem("wishList", JSON.stringify(sortWishlist));
+  };
+  const sortByPages = () => {
+    const sortBook = [...readBook].sort((a, b) => b.totalPages - a.totalPages);
+    const sortWishlist = [...wishList].sort(
+      (a, b) => b.totalPages - a.totalPages
+    );
+    setReadBook(sortBook);
+    setWishList(sortWishlist);
+    localStorage.setItem("read-book", JSON.stringify(sortBook));
+    localStorage.setItem("read-book", JSON.stringify(sortWishlist));
+  };
+  const sortByPublishedYear = () => {
+    const sortBook = [...readBook].sort(
+      (a, b) => b.yearOfPublishing - a.yearOfPublishing
+    );
+    const sortWishlist = [...wishList].sort(
+      (a, b) => b.yearOfPublishing - a.yearOfPublishing
+    );
+    setReadBook(sortBook);
+    setWishList(sortWishlist);
+    localStorage.setItem("read-book", JSON.stringify(sortBook));
+    localStorage.setItem("read-book", JSON.stringify(sortWishlist));
+  };
+
   const book = {
     allBooks,
     setAllBooks,
@@ -33,6 +64,9 @@ const BookProvider = ({ children }) => {
     setReadBook,
     wishList,
     setWishList,
+    sortByRating,
+    sortByPages,
+    sortByPublishedYear,
   };
   return <BookContext.Provider value={book}>{children}</BookContext.Provider>;
 };

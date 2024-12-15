@@ -28,6 +28,9 @@
 .btn-secondary {
   @apply bg-sky-500  px-3 py-1 lg:px-4 lg:py-2 text-white text-lg font-semibold rounded-md hover:bg-sky-700 duration-300;
 }
+.btn-danger {
+  @apply bg-red-500  px-3 py-1 lg:px-4 lg:py-2 text-white text-lg font-semibold rounded-md hover:bg-red-700 duration-300;
+}
 
 .activeTab {
   @apply text-xl font-semibold border-t-2 border-sky-500 pb-2;

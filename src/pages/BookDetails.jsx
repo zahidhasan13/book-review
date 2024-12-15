@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
-import { BookContext } from "../context/BookProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BookContext } from "../context/BookProvider";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -26,23 +26,42 @@ const BookDetails = () => {
   // const book = allBooks.find((book) => String(book.bookId) === id);
 
   const readBookHandler = (id) => {
+    // wishlist
+    const localWishList = JSON.parse(localStorage.getItem("wishList") || []);
+    // const existWishListData = localWishList?.find((book) => book.bookId == id);
+    // Read Book list
     const localReadBook = JSON.parse(localStorage.getItem("read-book"));
     const existData = localReadBook?.find((book) => book.bookId == id);
     if (id == book.bookId && !existData) {
       setReadBook([...readBook, book]);
-      toast("Added to Read Book list");
+
+      const updatedWishList = localWishList.filter(
+        (item) => item.bookId != book.bookId
+      );
+      setWishList(updatedWishList);
+      localStorage.setItem("wishList", JSON.stringify(updatedWishList));
+      toast.success("Added to Read Book list");
     } else {
-      toast("Already added in Read Book list");
+      toast.warning("Already added in Read Book list");
     }
   };
   const wishlistHandler = (id) => {
+    // read-book list
+    const localReadBook = JSON.parse(localStorage.getItem("read-book"));
+    const existReadData = localReadBook?.find((book) => book.bookId == id);
+    // wishlist
     const localWishList = JSON.parse(localStorage.getItem("wishList"));
     const existData = localWishList?.find((book) => book.bookId == id);
+    if (existReadData) {
+      toast.warning("Already you read this book");
+    }
     if (id == book.bookId && !existData) {
-      setWishList([...wishList, book]);
-      toast("Added to wishlist");
+      if (!existReadData) {
+        setWishList([...wishList, book]);
+        toast.success("Added to wishlist");
+      }
     } else {
-      toast("Already added in wishlist");
+      toast.warning("Already added in wishlist");
     }
   };
 
