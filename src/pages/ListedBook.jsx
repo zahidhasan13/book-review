@@ -8,7 +8,7 @@ const ListedBook = () => {
   const { readBook, wishList, sortByRating, sortByPages, sortByPublishedYear } =
     useContext(BookContext);
   return (
-    <div className="min-h-screen container mx-auto py-20">
+    <div className="min-h-screen container mx-auto py-20 px-4 lg:px-0">
       <div className="flex items-center justify-between border-b-2 border-sky-500 px-2 relative">
         <div className="flex items-center gap-5">
           <button

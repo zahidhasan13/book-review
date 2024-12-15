@@ -9,7 +9,7 @@ const Banner = () => {
           <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
             Discover, Explore, and Fall in Love with Books Again
           </h1>
-          <Link to="/book-list">
+          <Link to="/listed-book">
             <button className="btn-primary mt-5">Listed Book</button>
           </Link>
         </div>

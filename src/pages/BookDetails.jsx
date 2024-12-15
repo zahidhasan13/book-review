@@ -75,14 +75,14 @@ const BookDetails = () => {
   }, [wishList]);
 
   return (
-    <div className="container mx-auto py-20">
+    <div className="container mx-auto py-20 px-4 lg:px-0">
       <h2 className="text-4xl font-semibold text-center border-b-2 border-sky-500 pb-2">
         Book <span className="text-sky-500">Details</span>
       </h2>
       {!book?.bookName ? (
         <p>Loading....</p>
       ) : (
-        <div className="flex items-start gap-10 mt-10">
+        <div className="flex lg:flex-row flex-col items-start gap-10 mt-10">
           <div className="w-1/2">
             <img src={book?.image} alt="" className="w-full" />
           </div>

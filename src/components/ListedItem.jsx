@@ -46,11 +46,11 @@ const ListedItem = ({ book, type }) => {
   };
 
   return (
-    <div className="list-item-card border-2 border-sky-500 p-4 rounded-md flex items-start gap-10">
-      <div className="w-1/3">
+    <div className="list-item-card border-2 border-sky-500 p-4 rounded-md flex items-start flex-col lg:flex-row gap-10">
+      <div className="w-full lg:w-1/3">
         <img src={book?.image} alt="" className="w-full" />
       </div>
-      <div className="w-2/3 flex flex-col gap-5 overflow-hidden">
+      <div className="w-full lg:w-2/3 flex flex-col gap-5 overflow-hidden">
         <div className="flex items-center flex-wrap gap-3">
           {book.tags.map((tag, i) => (
             <span
