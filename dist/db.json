@@ -1,0 +1,95 @@
+{
+  "allBooks": [
+    {
+      "bookId": 1,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg/828px-To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
+      "review": "An unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it.",
+      "totalPages": 281,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Classic", "Civil Rights", "Legal Drama"],
+      "publisher": "J.B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 2,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://i.pinimg.com/originals/bd/29/34/bd293499ee09b8fa4182f2ae24d83133.jpg",
+      "review": "A gripping dystopian tale that explores the dangers of totalitarianism and extreme surveillance.",
+      "totalPages": 328,
+      "rating": 4.7,
+      "category": "Dystopian",
+      "tags": ["Political", "Dystopia", "Classic"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 3,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/423px-The_Great_Gatsby_Cover_1925_Retouched.jpg",
+      "review": "A masterful exploration of the American Dream through the eyes of Jay Gatsby and his doomed love story.",
+      "totalPages": 180,
+      "rating": 4.6,
+      "category": "Fiction",
+      "tags": ["Classic", "Romance", "Tragedy"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 4,
+      "bookName": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "image": "https://0.academia-photos.com/attachment_thumbnails/56412649/mini_magick20190112-30877-1w4t8pf.png?1547293862",
+      "review": "A thought-provoking narrative that connects the dots of human history and its impact on modern society.",
+      "totalPages": 443,
+      "rating": 4.9,
+      "category": "Non-Fiction",
+      "tags": ["History", "Anthropology", "Science"],
+      "publisher": "Harvill Secker",
+      "yearOfPublishing": 2011
+    },
+    {
+      "bookId": 5,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEiQl_g1oai860VQr9Di7EwU3PMmjCZGO9xg&s",
+      "review": "An intriguing look into the struggles of teenage rebellion and identity through the voice of Holden Caulfield.",
+      "totalPages": 214,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Classic", "Coming of Age", "Psychological"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 6,
+      "bookName": "Atomic Habits",
+      "author": "James Clear",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
+      "review": "An actionable guide to building good habits and breaking bad ones.",
+      "totalPages": 320,
+      "rating": 4.8,
+      "category": "Self-Help",
+      "tags": ["Productivity", "Psychology", "Personal Development"],
+      "publisher": "Penguin Random House",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 7,
+      "bookName": "The Alchemist",
+      "author": "Paulo Coelho",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdXyeHC3cys3nEPyA-O8YzAQqJ5M-h5Ch0LQ&s",
+      "review": "An inspiring story about following your dreams and finding your destiny.",
+      "totalPages": 208,
+      "rating": 4.6,
+      "category": "Fiction",
+      "tags": ["Philosophical", "Inspirational", "Adventure"],
+      "publisher": "HarperTorch",
+      "yearOfPublishing": 1988
+    }
+  ]
+}
