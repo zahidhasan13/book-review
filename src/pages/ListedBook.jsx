@@ -4,11 +4,18 @@ import { BookContext } from "../context/BookProvider";
 
 const ListedBook = () => {
   const [activeTab, setActiveTab] = useState("read-book");
-  const [openDropDown, setOpenDropDown] = useState(false);
-  const { readBook, wishList, sortByRating, sortByPages, sortByPublishedYear } =
-    useContext(BookContext);
+
+  const {
+    readBook,
+    wishList,
+    sortByRating,
+    sortByPages,
+    sortByPublishedYear,
+    openDropDown,
+    setOpenDropDown,
+  } = useContext(BookContext);
   return (
-    <div className="min-h-screen container mx-auto py-20 px-4 lg:px-0">
+    <div className="min-h-screen container mx-auto py-20 px-2 xl:px-0">
       <div className="flex items-center justify-between border-b-2 border-sky-500 px-2 relative">
         <div className="flex items-center gap-5">
           <button
@@ -24,7 +31,7 @@ const ListedBook = () => {
             WishList
           </button>
         </div>
-        <div className="absolute right-1 top-0">
+        <div className="relative">
           <button
             onClick={() => setOpenDropDown(!openDropDown)}
             id="dropdownDefaultButton"
@@ -42,9 +49,9 @@ const ListedBook = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="m1 1 4 4 4-4"
               />
             </svg>
@@ -53,7 +60,7 @@ const ListedBook = () => {
           {/* <!-- Dropdown menu --> */}
           <div
             id="dropdown"
-            className={`z-10 bg-sky-500 shadow w-44 ${
+            className={`absolute top-10 right-0 z-10 bg-sky-500 shadow w-32 md:w-44 ${
               openDropDown ? "block" : "hidden"
             }`}
           >
@@ -64,7 +71,7 @@ const ListedBook = () => {
               <li>
                 <button
                   onClick={sortByRating}
-                  class="block w-full px-4 py-2 hover:bg-sky-700"
+                  className="block md:w-full px-4 py-2 hover:bg-sky-700"
                 >
                   Rating
                 </button>
@@ -72,7 +79,7 @@ const ListedBook = () => {
               <li>
                 <button
                   onClick={sortByPages}
-                  class="block w-full px-4 py-2 hover:bg-sky-700"
+                  className="block md:w-full px-4 py-2 hover:bg-sky-700"
                 >
                   Number of Pages
                 </button>
@@ -80,7 +87,7 @@ const ListedBook = () => {
               <li>
                 <button
                   onClick={sortByPublishedYear}
-                  class="block w-full px-4 py-2 hover:bg-sky-700"
+                  className="block md:w-full px-4 py-2 hover:bg-sky-700"
                 >
                   Published Year
                 </button>

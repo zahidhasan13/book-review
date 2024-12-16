@@ -11,13 +11,13 @@ const Header = () => {
   };
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="bg-white/90 backdrop-blur-sm px-4 lg:px-6 py-2.5">
+      <nav className="bg-white/90 backdrop-blur-sm px-2 lg:px-6 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to="/" className="text-2xl font-semibold">
+          <Link to="/" className="text-xl font-semibold whitespace-nowrap">
             Book <span className="text-sky-500">Review</span>
           </Link>
           <div className="flex items-center lg:order-2">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1">
               <button className="btn-primary">Log in</button>
               <button className="btn-primary">Sign up</button>
             </div>
@@ -25,7 +25,7 @@ const Header = () => {
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-2xl rounded-lg lg:hidden"
+              className="inline-flex items-center p-2 ml-1 text-lg rounded-lg lg:hidden"
               aria-controls="mobile-menu-2"
               aria-expanded="false"
               onClick={menuToggler}
@@ -44,6 +44,7 @@ const Header = () => {
               <li>
                 <NavLink
                   to="/"
+                  onClick={() => setOpenMenu(!openMenu)}
                   className={({ isActive }) =>
                     isActive ? "activeLink" : "deactiveLink"
                   }
@@ -54,6 +55,7 @@ const Header = () => {
               <li>
                 <NavLink
                   to="/listed-book"
+                  onClick={() => setOpenMenu(!openMenu)}
                   className={({ isActive }) =>
                     isActive ? "activeLink" : "deactiveLink"
                   }
@@ -64,6 +66,7 @@ const Header = () => {
               <li>
                 <NavLink
                   to="/pages-to-read"
+                  onClick={() => setOpenMenu(!openMenu)}
                   className={({ isActive }) =>
                     isActive ? "activeLink" : "deactiveLink"
                   }

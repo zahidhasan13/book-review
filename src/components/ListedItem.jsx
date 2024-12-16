@@ -46,7 +46,7 @@ const ListedItem = ({ book, type }) => {
   };
 
   return (
-    <div className="list-item-card border-2 border-sky-500 p-4 rounded-md flex items-start flex-col lg:flex-row gap-10">
+    <div className="list-item-card border-2 border-sky-500 p-4 rounded-md flex items-start flex-col md:flex-row gap-10">
       <div className="w-full lg:w-1/3">
         <img src={book?.image} alt="" className="w-full" />
       </div>
@@ -78,7 +78,7 @@ const ListedItem = ({ book, type }) => {
         </p>
         <div className="flex items-center gap-3">
           <Link to={`/book-details/${book.bookId}`}>
-            <button className="btn-primary">View Details</button>
+            <button className="btn-secondary">View Details</button>
           </Link>
           <button
             onClick={() => bookDeleteHandler(book.bookId)}

@@ -4,6 +4,7 @@ export const BookContext = createContext();
 const BookProvider = ({ children }) => {
   const [allBooks, setAllBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [openDropDown, setOpenDropDown] = useState(false);
   const [readBook, setReadBook] = useState(() => {
     const storedReadBooks = JSON.parse(localStorage.getItem("read-book"));
     return storedReadBooks || [];
@@ -25,6 +26,7 @@ const BookProvider = ({ children }) => {
   }, []);
 
   const sortByRating = () => {
+    setOpenDropDown(!openDropDown);
     const sortBook = [...readBook].sort((a, b) => b.rating - a.rating);
     const sortWishlist = [...wishList].sort((a, b) => b.rating - a.rating);
     setReadBook(sortBook);
@@ -33,6 +35,7 @@ const BookProvider = ({ children }) => {
     localStorage.setItem("wishList", JSON.stringify(sortWishlist));
   };
   const sortByPages = () => {
+    setOpenDropDown(!openDropDown);
     const sortBook = [...readBook].sort((a, b) => b.totalPages - a.totalPages);
     const sortWishlist = [...wishList].sort(
       (a, b) => b.totalPages - a.totalPages
@@ -43,6 +46,7 @@ const BookProvider = ({ children }) => {
     localStorage.setItem("read-book", JSON.stringify(sortWishlist));
   };
   const sortByPublishedYear = () => {
+    setOpenDropDown(!openDropDown);
     const sortBook = [...readBook].sort(
       (a, b) => b.yearOfPublishing - a.yearOfPublishing
     );
@@ -67,6 +71,8 @@ const BookProvider = ({ children }) => {
     sortByRating,
     sortByPages,
     sortByPublishedYear,
+    openDropDown,
+    setOpenDropDown,
   };
   return <BookContext.Provider value={book}>{children}</BookContext.Provider>;
 };

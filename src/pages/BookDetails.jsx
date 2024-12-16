@@ -123,7 +123,7 @@ const BookDetails = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => readBookHandler(book?.bookId)}
-                className="btn-primary"
+                className="btn-danger"
               >
                 Read Book
               </button>
