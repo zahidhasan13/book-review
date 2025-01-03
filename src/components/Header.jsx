@@ -16,12 +16,7 @@ const Header = () => {
           <Link to="/" className="text-xl font-semibold whitespace-nowrap">
             Book <span className="text-sky-500">Review</span>
           </Link>
-          <div className="flex items-center lg:order-2">
-            <div className="flex items-center gap-1">
-              <button className="btn-primary">Log in</button>
-              <button className="btn-primary">Sign up</button>
-            </div>
-
+          <div className="lg:hidden flex items-center lg:order-2">
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
